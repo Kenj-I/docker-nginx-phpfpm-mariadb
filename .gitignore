@@ -12,3 +12,8 @@ project
 */.DS_Store
 */*/.DS_Store
 */*/*/.DS_Store
+
+#env
+.env
+build/envfile
+!.gitignore
