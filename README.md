@@ -1,4 +1,4 @@
-# docker centos-apache-php-mariadb
+# docker ubuntu nginx-php-fpm-mariadb
 
 ## git clone
 
