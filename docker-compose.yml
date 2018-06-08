@@ -17,10 +17,15 @@ services:
 
     nginx:
         image: nginx:latest
+        # not use nginx-proxy
         # ports:
         #     - "8888:80"
         environment:
+            # use nginx-proxy
             - VIRTUAL_HOST=$VIRTUAL_HOST
+            # if you use https
+            - CERT_NAME=default
+            # - HTTPS_METHOD=noredirect
         depends_on:
             - app
         volumes:
@@ -47,6 +52,6 @@ services:
 #settin virtualhost
 networks:
   app:
+  #use nginx proxy
   external_nginx_proxy:
-    external:
-        name: proxy_net
+    external: true
