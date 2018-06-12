@@ -1,5 +1,6 @@
 FROM php:7.1-fpm
 
+WORKDIR /var/www
 RUN apt-get update && apt-get install -my wget gnupg
 
 # タイムゾーンの変更
