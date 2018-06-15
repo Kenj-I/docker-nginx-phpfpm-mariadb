@@ -22,7 +22,7 @@ services:
 
     nginx:
         image: nginx:latest
-        container_name:
+        container_name: hoge
         # not use nginx-proxy
         # ports:
         #     - "8888:80"
@@ -51,7 +51,9 @@ services:
     app:
         build: build/phpfpm
         image: phpfpm:71
-        container_name:
+        container_name: hoge
+        # if use vps
+        # user: '1000:1000'
         depends_on:
             - database
         env_file: ./build/envfile
