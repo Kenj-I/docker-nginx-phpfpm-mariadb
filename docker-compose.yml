@@ -48,6 +48,7 @@ services:
             - database
         env_file: ./build/envfile
         volumes:
+            - ./build/phpfpm/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ./project:/var/www
         networks:
            - app

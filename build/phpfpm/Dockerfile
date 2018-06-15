@@ -1,5 +1,9 @@
 FROM php:7.1-fpm
 
+# if this use for production
+#RUN groupadd kenji
+#RUN useradd -u 1000 -g kenji kenji
+
 WORKDIR /var/www
 RUN apt-get update && apt-get install -my wget gnupg
 
@@ -42,3 +46,11 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y nodejs
 
 RUN apt-get update && apt-get install -y sendmail
+
+# if this use for production
+# USER kenji
+RUN mkdir ~/.npm-global
+RUN npm config set prefix '~/.npm-global'
+RUN echo export PATH=~/.npm-global/bin:$PATH >> ~/.profile
+RUN ls -l ~/.profile
+RUN . ~/.profile # for debian, if use ubuntu or centos use source
