@@ -13,6 +13,10 @@ services:
             - ./data:/var/lib/mysql
             #if you insert init data
             #- ../app/initial.sql:/docker-entrypoint-initdb.d/initial.sql
+        logging:
+            options:
+                max-size: "5m"
+                max-file: "10"
         networks:
             - app
 
@@ -36,6 +40,10 @@ services:
             - ./build/nginx/fastcgi.conf:/etc/nginx/fastcgi.conf
             - ./project:/var/www
             # - ./logs:/var/log/nginx
+        logging:
+            options:
+                max-size: "5m"
+                max-file: "10"
         networks:
            - external_nginx_proxy
            - app
@@ -50,6 +58,10 @@ services:
         volumes:
             - ./build/phpfpm/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ./project:/var/www
+        logging:
+            options:
+                max-size: "5m"
+                max-file: "10"
         networks:
            - app
 
