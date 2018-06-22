@@ -47,10 +47,10 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 
 RUN apt-get update && apt-get install -y sendmail
 
-# if this use for production
-# USER kenji
-RUN mkdir ~/.npm-global
-RUN npm config set prefix '~/.npm-global'
-RUN echo export PATH=~/.npm-global/bin:$PATH >> ~/.profile
-RUN ls -l ~/.profile
-RUN . ~/.profile # for debian, if use ubuntu or centos use source
+# if this use for production vps
+#USER kenji
+#RUN mkdir ~/.npm-global
+#RUN npm config set prefix '~/.npm-global'
+#RUN echo export PATH=~/.npm-global/bin:$PATH >> ~/.profile
+#RUN ls -l ~/.profile
+#RUN . ~/.profile # for debian, if use ubuntu or centos use comand [source ~/.profile]
