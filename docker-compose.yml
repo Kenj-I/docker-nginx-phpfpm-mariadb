@@ -27,11 +27,14 @@ services:
         # ports:
         #     - "8888:80"
         environment:
-            # use nginx-proxy
+            # if use nginx-proxy
             - VIRTUAL_HOST=$VIRTUAL_HOST
-            # if you use https
+            # if use https for remote
+            # - VIRTUAL_HOST=$VIRTUAL_HOST
+            # if use https for local
             - CERT_NAME=default
             # - HTTPS_METHOD=noredirect
+            - TZ=Asia/Tokyo
         depends_on:
             - app
         volumes:
@@ -54,6 +57,8 @@ services:
         container_name: hoge
         # if use vps
         # user: '1000:1000'
+        environment:
+            - TZ=Asia/Tokyo
         depends_on:
             - database
         env_file: ./build/envfile
