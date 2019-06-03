@@ -22,7 +22,7 @@ services:
 
     nginx:
         image: nginx:latest
-        container_name: hoge
+        container_name: ${COMPOSE_PROJECT_NAME}_nginx
         # not use nginx-proxy
         # ports:
         #     - "8888:80"
@@ -54,7 +54,7 @@ services:
     app:
         build: build/phpfpm
         image: phpfpm:71
-        container_name: hoge
+        container_name: ${COMPOSE_PROJECT_NAME}_app
         # if use vps
         # user: '1000:1000'
         environment:
