@@ -22,16 +22,16 @@ ENV LANGUAGE=en_US:en
 
 #extention
 RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng-dev \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+  libfreetype6-dev \
+  libjpeg62-turbo-dev \
+  libmcrypt-dev \
+  libpng-dev \
+  && docker-php-ext-install -j$(nproc) iconv mcrypt \
+  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+  && docker-php-ext-install -j$(nproc) gd
 
 RUN apt-get update \
-	&& docker-php-ext-install mbstring pdo pdo_mysql mysqli bcmath posix bcmath posix zip
+  && docker-php-ext-install mbstring pdo pdo_mysql mysqli bcmath posix bcmath posix zip
 
 #composer install
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
@@ -41,9 +41,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && mv composer.phar /usr/local/bin/composer
 
 #nodejs
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-    && apt-get update \
-    && apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+  && apt-get update \
+  && apt-get install -y nodejs
 
 RUN apt-get update && apt-get install -y sendmail
 
