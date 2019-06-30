@@ -1,4 +1,4 @@
-MYSQL_ROOT_PASSWORD=rootpassword
+MYSQL_ROOT_PASSWORD=root
 MYSQL_DATABASE=project
 MYSQL_USER=development
 MYSQL_PASSWORD=development
