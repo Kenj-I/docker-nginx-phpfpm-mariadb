@@ -1,8 +1,8 @@
-mkdir data
+mkdir ../db
 
-mkdir log
-touch log/access.log
-touch log/error.log
+mkdir ../log
+touch ../log/access.log
+touch ../log/error.log
 
 mkdir project
 
