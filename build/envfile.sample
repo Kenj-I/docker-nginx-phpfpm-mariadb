@@ -1,9 +1,9 @@
 MYSQL_ROOT_PASSWORD=rootpassword
 MYSQL_DATABASE=project
 MYSQL_USER=development
-MYSQL_PASSWORD=developmentpassword
+MYSQL_PASSWORD=development
 
 DATABASE_HOST=database
 DATABASE_NAME=project
 DATABASE_USER=development
-DATABASE_PASSWORD=developmentpassword
+DATABASE_PASSWORD=development
